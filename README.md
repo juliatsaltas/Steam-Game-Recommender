@@ -1,48 +1,8 @@
 # Game Recommender System
 
-## Sample Output of Recommender
+This recommender system uses a collaborative filtering technique that makes recommendations to users based on other user profiles with similar preferences. In this case, user purchases are compared to other user purchases and games that are commonly purchased with other games are linked with higher similiarity scores than games that are less likely to be purchased by multiple users.
 
-This game recommender system uses cosine similarity to make game recommendations for users based on users with similar purchase or play time profiles.
-
-**Purchase Similarity**
-|Thomas Was Alone|
-|Average Play Time (Hrs): 1.0|
-|Number of Players: 27|
-|10 closest titles:|
-|game|
-|Little Inferno|0.38|
-|Botanicula|0.34|
-|Joe Danger 2 The Movie|0.32|
-|Dear Esther|0.31|
-|Antichamber|0.30|
-|Tiny and Big Grandpa’s Leftovers|0.29|
-|Gone Home|0.27|
-|Reus|0.27|
-|English Country Tune|0.27|
-|Papers, Please|0.27|
-|Name: Thomas Was Alone, dtype: float64|
-
-
-**Play Time Similarity**
-|Thomas Was Alone|
-|Number of Players: 27|
-|10 closest titles:|
-|game|
-|Portal 2 - The Final Hours|0.52|
-|Oozi Earth Adventure|0.52|
-|Cloud Chamber|0.52|
-|Return to Mysterious Island 2|0.52|
-|Critical Mass|0.52|
-|Mission Control NanoMech|0.52|
-|Fester Mudd Curse of the Gold - Episode 1|0.52|
-|GEARCRACK Arena|0.52|
-|Defense Grid 2 A Matter of Endurance|0.52|
-|Dreamfall Chapters|0.49|
-|Name: Thomas Was Alone, dtype: float64|
-
-## Recommender Review
-
-Play time isn’t necessarily the best indicated of similar tastes in the Steam world. This is because of the vast variety of game genres to choose from on the platform that are of varying lengths. Some smaller, but popular, independent games could have a completion time of a couple hours while there are also free-to-play games that users dedicate hundreds of hours on that game, but this does not mean that a user would necessarily like a game any less because of the shorter overall playtime. (Every gaming forum on the internet may convince that every game under 100 hrs is too short, but I at least have the bias of loving games under 10 hrs.) Therefore, purchase similarity may be a better indicator of game similarity based on similar purchase profiles between two users. However, this assumes that the player enjoys playing every game they purchase.
+Comparing similar purchases instead of a similar game playtimes is a better predictor for comparing games of similar genre rather than comparing total play time. Someone might really enjoy a free-to-play battle game while also loving smaller, quick to finish titles. By comparing play time values might have the player miss out on shorter games if they also play some longer form games as well, and the recommender ends up only recommending other games with high play times.
 
 Play time may be a better recommendation feature for games of similar genre or length. For instance, successful hyper-casual games may only engage users for a short time each day for a few before a user moves onto a new game. Therefore the download itself may not be the only good indicator that the user enjoys a title, but rather games that the user played over time. However, even in this case, the pace of advertisement might outpace the interest of the user in the hyper-casual field. 
 
