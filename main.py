@@ -1,5 +1,3 @@
-import steam_segment
-import steam_prediction
 import steam_recommender
 import streamlit as st
 
