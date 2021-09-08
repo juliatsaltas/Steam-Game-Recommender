@@ -10,6 +10,7 @@ def app():
 
 	Data obtained from the Steam Store raw dataset from [Kaggle](https://www.kaggle.com/tamber/steam-video-games) by Tamber.com.
 	Data cleaning and EDA presented here: [link](https://www.kaggle.com/fivewheeler/steam-video-games-eda)
+	
 
 	""")
 
@@ -22,7 +23,7 @@ def app():
 	df_recommender.set_index('game',inplace=True)
 
 	st.write("""
-	**Input a game title or part of a game title to get a list of games other users have purchased together.**
+	Input a game title or part of a game title to get a list of games other users have purchased together.
 	""")
 
 	# 2. User input of game
