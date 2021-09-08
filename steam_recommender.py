@@ -39,7 +39,7 @@ def app():
 	steam['game_lower'] = [i.lower() for i in steam['game']]
 	
 	count = 0
-	for title in steam.loc[steam['game'].str.contains(search.lower()), 'game']:
+	for title in steam.loc[steam['game_lower'].str.contains(search.lower()), 'game']:
 		st.write(title)
 		st.write(f"Number of Players: {pivot.T[title].count()}")
 		st.write("10 closest titles:")
