@@ -28,7 +28,7 @@ def app():
 
 	# 2. User input of game
 	def user_input_features():
-		search = st.text_input("### Search Game Title")
+		search = st.text_input("Search Game Title")
 		data = {'search': search}
 		features = pd.DataFrame(data, index=[0])
 		return features
