@@ -11,13 +11,20 @@ def app():
 	Data obtained from the Steam Store raw dataset from [Kaggle](https://www.kaggle.com/tamber/steam-video-games) by Tamber.com.
 	Data cleaning and EDA presented here: [link](https://www.kaggle.com/fivewheeler/steam-video-games-eda)
 	
+	This site can take up to half a minute to load: 
 
 	""")
+	@st.chache()
+	def load_data(file_name):
+		data_file = pd.read_csv(file_name)
+		return data_file
 
+	steam = load_data('steam_clean_recommender.csv')
+	pivot = load_data('steam_recommender_pivot.csv')
 
 	### 1. Upload dataframe with clustered user data
-	steam = pd.read_csv('steam_clean_recommender.csv')
-	pivot = pd.read_csv('steam_recommender_pivot.csv')
+	#steam = pd.read_csv('steam_clean_recommender.csv')
+	#pivot = pd.read_csv('steam_recommender_pivot.csv')
 	pivot.set_index('game',inplace=True)
 	df_recommender = pd.read_csv('steam_recommender.csv')
 	df_recommender.set_index('game',inplace=True)
