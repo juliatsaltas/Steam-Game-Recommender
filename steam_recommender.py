@@ -14,7 +14,7 @@ def app():
 	This site can take up to half a minute to load: 
 
 	""")
-	@st.cache()
+	@st.cache(allow_output_mutation=True)
 	def load_data(file_name):
 		data_file = pd.read_csv(file_name)
 		return data_file
