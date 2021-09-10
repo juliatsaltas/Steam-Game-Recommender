@@ -53,7 +53,7 @@ def app():
 	#st.write('Search Runtime: ', stop - start)
 
 	# 5. print tables
-	count = 0
+	count = 1
 	for title in steam.loc[steam['game_lower'].str.contains(search.lower()), 'game']:
 		st.write(title)
 		st.write(f"Number of Players: {pivot.T[title].count()}")
