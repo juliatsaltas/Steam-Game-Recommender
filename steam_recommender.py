@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#
-#import timeit
+
+import timeit
 
  
 
@@ -18,19 +18,27 @@ def app():
 
 	
 	""")
-	#start = timeit.default_timer()
+	start = timeit.default_timer()
+
 
 	# 1. Setup cache function - brought down data load 
-	# runtime from 35 to 0.003 seconds
+	# runtime from 35 to 0.05 seconds
 	@st.cache(allow_output_mutation=True)
 	def load_data(file_name):
 		data_file = pd.read_csv(file_name)
 		return data_file
 	
-	# 2. Upload dataframe with clustered user data
 	steam = load_data('steam_clean_recommender.csv')
 	pivot = load_data('steam_recommender_pivot.csv')
 	df_recommender = load_data('steam_recommender.csv')
+
+	### 1. Upload dataframe with clustered user data
+	#steam = pd.read_csv('steam_clean_recommender.csv')
+	#pivot = pd.read_csv('steam_recommender_pivot.csv')
+	#pivot.set_index('game',inplace=True)
+	#df_recommender = pd.read_csv('steam_recommender.csv')
+	#df_recommender.set_index('game',inplace=True)
+
 
 	st.write("""
 	Input a game title or part of a game title to get a list of games other users have purchased together.
@@ -49,11 +57,11 @@ def app():
 	search = user_input['search'][0]
 	steam['game_lower'] = [i.lower() for i in steam['game']]
 	
-	#stop = timeit.default_timer()
-	#st.write('Search Runtime: ', stop - start)
+	stop = timeit.default_timer()
+	st.write('Search Runtime: ', stop - start)
 
+	count = 0
 	# 5. print tables
-	count = 1
 	for title in steam.loc[steam['game_lower'].str.contains(search.lower()), 'game']:
 		st.write(title)
 		st.write(f"Number of Players: {pivot.T[title].count()}")
