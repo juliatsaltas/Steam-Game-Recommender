@@ -1,6 +1,8 @@
 # Game Recommender System
 
-This recommender system uses a collaborative filtering technique that makes recommendations to users based on other user profiles with similar preferences. In this case, user purchases are compared to other user purchases and games that are commonly purchased with other games are linked with higher similiarity scores than games that are less likely to be purchased by multiple users.
+Check out the app here: https://steam-streamlit-app.herokuapp.com/
+
+This recommender system uses a collaborative filtering technique that makes recommendations to users based on other user profiles with similar preferences. In this case, user purchases are compared to other user purchases and games that are commonly purchased with other games are linked with higher similarity scores than games that are less likely to be purchased by multiple users.
 
 Comparing similar purchases instead of a similar game playtimes is a better predictor for comparing games of similar genre rather than comparing total play time. Someone might really enjoy a free-to-play battle game while also loving smaller, quick to finish titles. By comparing play time values might have the player miss out on shorter games if they also play some longer form games as well, and the recommender ends up only recommending other games with high play times.
 
