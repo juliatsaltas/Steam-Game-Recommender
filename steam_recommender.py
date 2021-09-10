@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
-import timeit
+#
+#import timeit
 
  
 
@@ -55,7 +55,7 @@ def app():
 	# 5. print tables
 	count = 0
 	for title in steam.loc[steam['game_lower'].str.contains(search.lower()), 'game']:
-		st.write(f"### {title}")
+		st.write(title)
 		st.write(f"Number of Players: {pivot.T[title].count()}")
 		st.write("10 closest titles:")
 		st.write(round(df_recommender[title].sort_values(ascending=False)[1:11], 2))
