@@ -18,7 +18,7 @@ def app():
 
 	
 	""")
-	start = timeit.default_timer()
+	#start = timeit.default_timer()
 
 	# 1. Setup cache function - brought down data load 
 	# runtime from 35 to 0.003 seconds
@@ -49,8 +49,8 @@ def app():
 	search = user_input['search'][0]
 	steam['game_lower'] = [i.lower() for i in steam['game']]
 	
-	stop = timeit.default_timer()
-	st.write('Search Runtime: ', stop - start)
+	#stop = timeit.default_timer()
+	#st.write('Search Runtime: ', stop - start)
 
 	# 5. print tables
 	count = 0
